@@ -19,8 +19,8 @@ public class StateControl : MonoBehaviour
     //bool blueWins 
 
     // crab instantiate
-    public Crab crab1;
-    public Crab crab2;
+    public Crab redCrab;
+    public Crab blueCrab;
     public MenuAppear menu;
 
     // setup sprite renderer
@@ -37,8 +37,9 @@ public class StateControl : MonoBehaviour
 
     // sprites
     public Sprite startSprite;
-    public Sprite p1VictorySprite;
-    public Sprite p2VictorySprite;
+    public Sprite drawSprite;
+    public Sprite redVictorySprite;
+    public Sprite blueVictorySprite;
 
     // setup state and timer
     private State currentState = State.SETUP;
@@ -48,7 +49,7 @@ public class StateControl : MonoBehaviour
     // wait times
     private const float setupTime = 1f;
     private const float startTime = 0.3f;
-    private const float playTime = 10f;
+    private const float playTime = 120f;
     private const float winTime = 2f;
     private const float restartTime = 30f;
 
@@ -119,27 +120,49 @@ public class StateControl : MonoBehaviour
         {
             stateSelect(State.PLAY);
             srenderer.enabled = false;
-            crab1.activate();
+            redCrab.activate();
+            blueCrab.activate();
         }
 
     }
 
     private void handlePlay()
     {
+        if (!blueCrab.isAlive() && !redCrab.isAlive())
+        {
+            stateSelect(State.WIN);
+            audioSource.PlayOneShot(victorySound, 1);
+            srenderer.enabled = true;
+            srenderer.sprite = drawSprite;
+        }
+
+        if (!blueCrab.isAlive() && redCrab.isAlive())
+        {
+            stateSelect(State.WIN);
+            audioSource.PlayOneShot(victorySound, 1);
+            srenderer.enabled = true;
+            srenderer.sprite = blueVictorySprite;
+        }
+
+        if (blueCrab.isAlive() && !redCrab.isAlive())
+        {
+            stateSelect(State.WIN);
+            audioSource.PlayOneShot(victorySound, 1);
+            srenderer.enabled = true;
+            srenderer.sprite = blueVictorySprite;
+        }
+
         if (waitCount >= playTime)
         {
             stateSelect(State.WIN);
             audioSource.PlayOneShot(victorySound, 1);
-            //crab1.deactivate();
             srenderer.enabled = true;
-            srenderer.sprite = p1VictorySprite;
-
+            srenderer.sprite = drawSprite;
         }
     }
 
     private void handleWin()
     {
-      
         if (waitCount >= winTime)
         {
             stateSelect(State.RESTART);

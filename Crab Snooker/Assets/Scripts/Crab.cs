@@ -34,6 +34,7 @@ public class Crab : MonoBehaviour
 
     // Transformation of the crab body.
     public Transform bodyT;
+    public CrabBody crabBody;
 
     private SpriteRenderer legRenderer;
 
@@ -124,6 +125,11 @@ public class Crab : MonoBehaviour
     {
         state = State.TRANSITOUT;         
         bodyAnimator.SetTrigger("shellOut");
+    }
+
+    public bool isAlive()
+    {
+        return crabBody.isAlive();
     }
 
     private void handleMove()
