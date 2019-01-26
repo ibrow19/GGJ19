@@ -37,5 +37,11 @@ public class CueForce : MonoBehaviour
 
         // Apply force.
         collider.attachedRigidbody.AddForce(dir * force);
+
+        if (collider.gameObject.tag == "Ball")
+        {
+            RegularBall ball = collider.gameObject.GetComponent<RegularBall>();
+            ball.powerUp();
+        }
     }
 }

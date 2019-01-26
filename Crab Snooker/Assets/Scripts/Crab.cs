@@ -30,7 +30,7 @@ public class Crab : MonoBehaviour
     // Animation times.
     private const float transitTime = 0.1f;
     private const float blockTime = 1f;
-    private const float shootTime = 0.1f;
+    private const float shootTime = 0.08f;
 
     // Transformation of the crab body.
     public Transform bodyT;
@@ -67,11 +67,6 @@ public class Crab : MonoBehaviour
             return;
         }
 
-        //bodyAnimator.SetTrigger("shellIn");
-        //bodyAnimator.SetTrigger("shellIn");
-        //bodyAnimator.SetTrigger("shellIn");
-        //bodyAnimator.SetTrigger("shellIn");
-        //bodyAnimator.SetTrigger("shellIn");
         if ((state == State.TRANSITOUT || state == State.TRANSITIN) &&
              stateTime > transitTime)
         {
