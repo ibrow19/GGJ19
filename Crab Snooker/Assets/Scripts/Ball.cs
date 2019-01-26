@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+<<<<<<< Updated upstream
     private Rigidbody2D rb2d;
     /*
     void OnCollisionEnter(Collision col)
@@ -37,6 +38,12 @@ public class Ball : MonoBehaviour
         rb2d = this.gameObject.GetComponent<Rigidbody2D>();
         rb2d.AddTorque(Random.Range(-1.0f, 1.0f));
         rb2d.AddForce(transform.right * Random.Range(500.0f,1000.0f));
+=======
+    ParticleSystem ps;
+    // Start is called before the first frame update
+    void Start()
+    {
+>>>>>>> Stashed changes
 
     }
 
