@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2801407476974744791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8074765049345589297}
+  - component: {fileID: 1209801187194641532}
+  - component: {fileID: 36867891563478392}
+  m_Layer: 0
+  m_Name: CueForce
+  m_TagString: Force
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8074765049345589297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801407476974744791}
+  m_LocalRotation: {x: -0, y: -0, z: 0.13819289, w: 0.9904054}
+  m_LocalPosition: {x: -1.385719, y: 1.58107, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4866010013988848043}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1209801187194641532
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801407476974744791}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.02, y: -0.83}
+  m_Size: {x: 1.5, y: 0.2}
+  m_Direction: 1
+--- !u!114 &36867891563478392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801407476974744791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51cd611ff0b8f5540b9bf95026a00fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3507806053632800847
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,6 +137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1317265120250186519}
+  - {fileID: 8074765049345589297}
   m_Father: {fileID: 8533699444668969855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.887001}
@@ -271,13 +332,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 20
   acceleration: 40
+  shootDuration: 1
   bodyT: {fileID: 8533699444668969855}
   moveXAxis: 
   moveYAxis: 
   lookXAxis: 
   lookYAxis: 
-  attackAxis: 
+  shootAxis: 
   blockAxis: 
+  cueForce: {fileID: 36867891563478392}
 --- !u!50 &1924836399402474806
 Rigidbody2D:
   serializedVersion: 4

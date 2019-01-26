@@ -434,6 +434,11 @@ PrefabInstance:
       propertyPath: lookYAxis
       value: VerticalR
       objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: shootAxis
+      value: Circle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 371de9a612e25ed47afb713c6795dd91, type: 3}
 --- !u!1001 &1156208193
