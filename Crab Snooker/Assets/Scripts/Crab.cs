@@ -50,9 +50,9 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Input.GetAxisRaw(shootAxis));
         if (state == State.NEUTRAL && Input.GetAxisRaw(shootAxis) > 0)
         {
+            Debug.Log("Shooting");
             setState(State.SHOOTING);
         }
         if (state == State.SHOOTING && stateTime > shootDuration)

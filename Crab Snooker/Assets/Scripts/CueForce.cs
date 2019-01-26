@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CueForce : MonoBehaviour
 {
-    private bool active = false;
+    public float force = 1000f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,22 +21,14 @@ public class CueForce : MonoBehaviour
     public void setActive(bool isActive)
     {
         GetComponent<Collider2D>().enabled = isActive; 
-        if (active)
-        {
-            Debug.Log("Is active");
-        }
     }
 
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-        //Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
-    //}
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log("Trigger");
-        if (active)
-        {
-            Debug.Log("Firing");
-        }
+        Vector3 dir = transform.rotation * new Vector3(1, 0, 0);
+
+        Debug.Log(dir * force);
+
+        collider.attachedRigidbody.AddForce(dir * force);
     }
 }

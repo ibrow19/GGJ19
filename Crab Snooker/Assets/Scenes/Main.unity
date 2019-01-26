@@ -437,7 +437,12 @@ PrefabInstance:
     - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
         type: 3}
       propertyPath: shootAxis
-      value: Circle
+      value: R2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: blockAxis
+      value: L2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 371de9a612e25ed47afb713c6795dd91, type: 3}
