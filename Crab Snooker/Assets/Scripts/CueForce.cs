@@ -5,6 +5,7 @@ using UnityEngine;
 public class CueForce : MonoBehaviour
 {
     public float force = 1000f;
+    private Vector3 refScale;
 
     // Start is called before the first frame update
     void Start()
@@ -18,8 +19,9 @@ public class CueForce : MonoBehaviour
         
     }
 
-    public void setActive(bool isActive)
+    public void setActive(bool isActive, Vector3 scale)
     {
+        refScale = scale;
         GetComponent<Collider2D>().enabled = isActive; 
     }
 
@@ -27,8 +29,13 @@ public class CueForce : MonoBehaviour
     {
         Vector3 dir = transform.rotation * new Vector3(1, 0, 0);
 
-        Debug.Log(dir * force);
+        // Correct direction based on parent scaling.
+        if (refScale.x < 0)
+        {
+            dir *= -1;
+        }
 
+        // Apply force.
         collider.attachedRigidbody.AddForce(dir * force);
     }
 }

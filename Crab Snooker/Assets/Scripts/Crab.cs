@@ -144,6 +144,6 @@ public class Crab : MonoBehaviour
     {
         stateTime = 0f;
         state = newState;
-        cueForce.setActive(newState == State.SHOOTING);
+        cueForce.setActive(newState == State.SHOOTING, transform.localScale);
     }
 }
