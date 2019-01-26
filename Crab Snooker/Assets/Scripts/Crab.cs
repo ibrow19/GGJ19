@@ -12,8 +12,14 @@ public class Crab : MonoBehaviour
     // Current state of crab.
     private State state = State.NEUTRAL;
 
-    // Constant attributes.
+    // Movement constant attributes.
     private const float moveSpeed = 1f;
+
+    // Rotation constant attributes.
+    private const float smooth = 5.0f;
+
+    // Transformation of the crab body.
+    public Transform bodyT;
 
     // Action axis bindings.
     public string moveXAxis;
@@ -22,15 +28,6 @@ public class Crab : MonoBehaviour
     public string lookYAxis;
     public string attackAxis;
     public string blockAxis;
-
-    //Rotations
-    //float rotVal = 0;
-    float smooth = 5.0f;
-    float tiltAngle = 60.0f;
-    float rotSpeed = 0.1f;
-    //Inputs
-    private float xValR;
-    private float yValR;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +48,41 @@ public class Crab : MonoBehaviour
         transform.Translate(move * Time.deltaTime * moveSpeed, Space.World);
     }
 
+    private void handleRotate()
+    {
+        Vector2 lookDir = getLookDir();
+        Vector3 curScale = transform.localScale;
+
+        // Don't rotate if joystick is in idle position
+        if (lookDir.magnitude == 0)
+        {
+            return;
+        }
+        // Flip when facing left.
+        else if ((lookDir.x >= 0 && curScale.x <= 0) ||
+                 (lookDir.x < 0 && curScale.x > 0))
+        {
+            curScale.x *= -1;
+            transform.localScale = curScale;
+        }
+
+        // Negate target x and y if looking left.
+        if (curScale.x < 0)
+        {
+            lookDir *= -1;
+        }
+        
+        // Get angle of stick rotation
+        float tiltAroundZ = Mathf.Rad2Deg * Mathf.Atan2(lookDir.y, lookDir.x);
+
+        // Set up quaternion for slerping
+        Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
+
+        // Slerp objects towrds stick direction, smooth determines speed of rotation
+        bodyT.transform.rotation = Quaternion.Slerp(bodyT.transform.rotation, target, Time.deltaTime * smooth);
+        bodyT.transform.rotation = Quaternion.RotateTowards(bodyT.transform.rotation, target, Time.deltaTime * smooth);
+    }
+
     private Vector2 getMove()
     {
         float x = Input.GetAxis(moveXAxis);
@@ -69,24 +101,4 @@ public class Crab : MonoBehaviour
         return lookDir;
     }
 
-    private void handleRotate()
-    {
-        // get right stick components
-        xValR = Input.GetAxis(lookXAxis);
-        yValR = Input.GetAxis(lookYAxis);
-        
-        // Get angle of stick rotation
-        float tiltAroundZ = Mathf.Rad2Deg * Mathf.Atan2(yValR, xValR);
-
-        // Set up quaternion for slerping
-        Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
-
-        // Don't rotate if joystick is in idle position
-        if (xValR == 0 && yValR == 0)
-            target = transform.rotation;
-
-        // Slerp objects towrds stick direction, smooth determines speed of rotation
-        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, target, Time.deltaTime * smooth);
-    }
 }
