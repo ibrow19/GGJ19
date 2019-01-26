@@ -13,7 +13,8 @@ public class Crab : MonoBehaviour
     private State state = State.NEUTRAL;
 
     // Movement attributes (public for access in editor).
-    public float moveSpeed = 1f;
+    public float maxSpeed = 1f;
+    public float acceleration = 1f;
 
     // Rotation constant attributes.
     private const float smooth = 5.0f;
@@ -50,9 +51,15 @@ public class Crab : MonoBehaviour
 
     private void handleMove()
     {
-        Vector3 move = getMove();
-        Vector3 destination = transform.position + move * Time.deltaTime * moveSpeed;
-        rigidBody.MovePosition(destination);
+        Vector2 move = getMove() * Time.deltaTime * acceleration;
+        Vector2 newVelocity = rigidBody.velocity + move;
+        if (newVelocity.magnitude > maxSpeed)
+        {
+            newVelocity = Vector2.ClampMagnitude(newVelocity, maxSpeed);
+        }
+        rigidBody.velocity = newVelocity;
+        //Vector3 destination = transform.position + move * Time.deltaTime * moveSpeed;
+        //rigidBody.MovePosition(destination);
         //transform.Translate(move * Time.deltaTime * moveSpeed, Space.World);
     }
 
@@ -96,7 +103,7 @@ public class Crab : MonoBehaviour
         float x = Input.GetAxis(moveXAxis);
         float y = Input.GetAxis(moveYAxis);
         Vector2 move = new Vector2(x, y);
-        //move.Normalize();
+        move.Normalize();
         return move;
     }
 
