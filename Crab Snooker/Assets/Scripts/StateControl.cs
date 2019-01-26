@@ -21,6 +21,7 @@ public class StateControl : MonoBehaviour
     // crab instantiate
     public Crab crab1;
     public Crab crab2;
+    public MenuAppear menu;
 
     // setup sprite renderer
     private SpriteRenderer srenderer;
@@ -69,9 +70,9 @@ public class StateControl : MonoBehaviour
 
         switch (currentState)
         {
-            //case State.SETUP:
-            //    handleSetup();
-           //     break;
+            case State.SETUP:
+                handleSetup();
+                break;
 
             case State.START:
                 handleStart();
@@ -141,6 +142,7 @@ public class StateControl : MonoBehaviour
         if (waitCount >= winTime)
         {
             stateSelect(State.RESTART);
+            menu.activate();
         }
     }
 

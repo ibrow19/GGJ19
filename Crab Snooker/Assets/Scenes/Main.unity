@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 462001021}
   - component: {fileID: 462001020}
   - component: {fileID: 462001019}
+  - component: {fileID: 462001023}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -368,6 +369,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &462001023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462001018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4095049beccc74894b8b039e836637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 462001018}
 --- !u!1001 &479885593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -769,6 +783,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crab1
       objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: moveXAxis
+      value: HorizontalL
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: moveYAxis
+      value: VerticalL
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: lookXAxis
+      value: HorizontalR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: lookYAxis
+      value: VerticalR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: shootAxis
+      value: R1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: blockAxis
+      value: L1
+      objectReference: {fileID: 0}
     - target: {fileID: 307398607664721215, guid: 371de9a612e25ed47afb713c6795dd91,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -823,36 +867,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
-        type: 3}
-      propertyPath: moveXAxis
-      value: HorizontalL
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
-        type: 3}
-      propertyPath: moveYAxis
-      value: VerticalL
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
-        type: 3}
-      propertyPath: lookXAxis
-      value: HorizontalR
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
-        type: 3}
-      propertyPath: lookYAxis
-      value: VerticalR
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
-        type: 3}
-      propertyPath: shootAxis
-      value: R2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
-        type: 3}
-      propertyPath: blockAxis
-      value: L2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 371de9a612e25ed47afb713c6795dd91, type: 3}
@@ -1009,6 +1023,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Crab2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: moveXAxis
+      value: HorizontalL2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: moveYAxis
+      value: VerticalL2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: lookXAxis
+      value: HorizontalR2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: lookYAxis
+      value: VerticalR2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: shootAxis
+      value: R1_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8638137428971696329, guid: 371de9a612e25ed47afb713c6795dd91,
+        type: 3}
+      propertyPath: blockAxis
+      value: L1_2
       objectReference: {fileID: 0}
     - target: {fileID: 307398607664721215, guid: 371de9a612e25ed47afb713c6795dd91,
         type: 3}
@@ -1531,6 +1575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crab1: {fileID: 747640454}
   crab2: {fileID: 60635784}
+  menu: {fileID: 462001023}
   setupSound: {fileID: 8300000, guid: bcf2c0391c9419342b1e1fa5e7d559f0, type: 3}
   startSound: {fileID: 0}
   victorySound: {fileID: 8300000, guid: 2ed6ba60dfdeb7f4fa6c6210e8d36efb, type: 3}
