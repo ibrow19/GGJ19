@@ -51,6 +51,9 @@ TagManager:
   - name: CrabBody
     uniqueID: 2022082509
     locked: 0
+  - name: BallTrails
+    uniqueID: 1608620227
+    locked: 0
   - name: Balls
     uniqueID: 3815215655
     locked: 0
