@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrabBody : MonoBehaviour
 {
     private Animator animator;
+    private bool alive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,26 @@ public class CrabBody : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            // TODO: play audio here.
+
+
+            RegularBall otherBall = collision.gameObject.GetComponent<RegularBall>();
+
+            if (otherBall.isPowered())
+            {
+                alive = false;
+            }
+        }
+    }
+
+    public bool isAlive()
+    {
+        return alive;
     }
 }

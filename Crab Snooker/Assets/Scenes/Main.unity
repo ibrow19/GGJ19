@@ -1470,6 +1470,16 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 462001023}
+    - target: {fileID: 727477810365422451, guid: 21f4c233864e63340b9539d18c93d826,
+        type: 3}
+      propertyPath: redCrab
+      value: 
+      objectReference: {fileID: 747640454}
+    - target: {fileID: 727477810365422451, guid: 21f4c233864e63340b9539d18c93d826,
+        type: 3}
+      propertyPath: blueCrab
+      value: 
+      objectReference: {fileID: 60635784}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21f4c233864e63340b9539d18c93d826, type: 3}
 --- !u!1001 &3126579635387156583

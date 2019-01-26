@@ -367,6 +367,7 @@ MonoBehaviour:
   maxSpeed: 20
   acceleration: 40
   bodyT: {fileID: 8533699444668969855}
+  crabBody: {fileID: 690255865217742265}
   moveXAxis: 
   moveYAxis: 
   lookXAxis: 
