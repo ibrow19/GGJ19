@@ -29,23 +29,31 @@ public class Crab : MonoBehaviour
     public string attackAxis;
     public string blockAxis;
 
+    private Rigidbody2D rigidBody;
+
     // Start is called before the first frame update
     void Start()
     {
-         
+        rigidBody = GetComponent<Rigidbody2D>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        handleMove();
+    }
+
+    void FixedUpdate()
+    {
         handleRotate();
+        handleMove();
     }
 
     private void handleMove()
     {
-        Vector2 move = getMove();
-        transform.Translate(move * Time.deltaTime * moveSpeed, Space.World);
+        Vector3 move = getMove();
+        Vector3 destination = transform.position + move * Time.deltaTime * moveSpeed;
+        rigidBody.MovePosition(destination);
+        //transform.Translate(move * Time.deltaTime * moveSpeed, Space.World);
     }
 
     private void handleRotate()
