@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour
     {
         
         rb2d = this.gameObject.GetComponent<Rigidbody2D>();
-        rb2d.AddTorque(Random.Range(-1.0f, 1.0f));
+        rb2d.AddTorque(Random.Range(-100.0f, 100.0f));
         rb2d.AddForce(transform.right * Random.Range(500.0f,1000.0f));
     }
 
