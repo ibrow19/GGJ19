@@ -12,8 +12,8 @@ public class Crab : MonoBehaviour
     // Current state of crab.
     private State state = State.NEUTRAL;
 
-    // Movement constant attributes.
-    private const float moveSpeed = 1f;
+    // Movement attributes (public for access in editor).
+    public float moveSpeed = 1f;
 
     // Rotation constant attributes.
     private const float smooth = 5.0f;
