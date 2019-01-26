@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Force
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: CrabBody
     uniqueID: 2022082509
+    locked: 0
+  - name: BallTrails
+    uniqueID: 1608620227
     locked: 0
   - name: Balls
     uniqueID: 3815215655

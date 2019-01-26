@@ -7,6 +7,7 @@ public class Crab : MonoBehaviour
     enum State
     {
         NEUTRAL,
+        SHOOTING,
     }
 
     // Current state of crab.
@@ -16,8 +17,14 @@ public class Crab : MonoBehaviour
     public float maxSpeed = 1f;
     public float acceleration = 1f;
 
+    // Shooting attributes.
+    public float shootDuration = 1f;
+
     // Rotation constant attributes.
     private const float smooth = 5.0f;
+
+    // Timer for current state.
+    private float stateTime = 0f;
 
     // Transformation of the crab body.
     public Transform bodyT;
@@ -27,26 +34,43 @@ public class Crab : MonoBehaviour
     public string moveYAxis;
     public string lookXAxis;
     public string lookYAxis;
-    public string attackAxis;
+    public string shootAxis;
     public string blockAxis;
+
+    public CueForce cueForce;
 
     private Rigidbody2D rigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>(); 
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (state == State.NEUTRAL && Input.GetAxisRaw(shootAxis) > 0)
+        {
+            Debug.Log("Shooting");
+            setState(State.SHOOTING);
+        }
+        if (state == State.SHOOTING && stateTime > shootDuration)
+        {
+            setState(State.NEUTRAL);
+        }
     }
 
     void FixedUpdate()
     {
-        handleRotate();
-        handleMove();
+        // Update state timer.
+        stateTime += Time.deltaTime;
+
+        if (state == State.NEUTRAL)
+        {
+            handleRotate();
+            handleMove();
+        }
     }
 
     private void handleMove()
@@ -116,4 +140,10 @@ public class Crab : MonoBehaviour
         return lookDir;
     }
 
+    private void setState(State newState)
+    {
+        stateTime = 0f;
+        state = newState;
+        cueForce.setActive(newState == State.SHOOTING, transform.localScale);
+    }
 }
