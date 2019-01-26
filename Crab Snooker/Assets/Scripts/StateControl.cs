@@ -151,14 +151,6 @@ public class StateControl : MonoBehaviour
             srenderer.enabled = true;
             srenderer.sprite = blueVictorySprite;
         }
-
-        if (waitCount >= playTime)
-        {
-            stateSelect(State.WIN);
-            audioSource.PlayOneShot(victorySound, 1);
-            srenderer.enabled = true;
-            srenderer.sprite = drawSprite;
-        }
     }
 
     private void handleWin()
