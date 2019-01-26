@@ -15,8 +15,8 @@ public class StateControl : MonoBehaviour
         RESTART
     }
 
-    // ball instantiate
-    //public Ball ball;
+    // win conditions
+    //bool blueWins 
 
     // crab instantiate
     public Crab crab1;
@@ -133,6 +133,7 @@ public class StateControl : MonoBehaviour
             //crab1.deactivate();
             srenderer.enabled = true;
             srenderer.sprite = p1VictorySprite;
+
         }
     }
 
