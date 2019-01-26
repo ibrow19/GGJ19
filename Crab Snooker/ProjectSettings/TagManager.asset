@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Crab
+  - Background
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 592912261
+    locked: 0
+  - name: CrabLegs
+    uniqueID: 317927419
+    locked: 0
+  - name: CrabBody
+    uniqueID: 2022082509
     locked: 0
