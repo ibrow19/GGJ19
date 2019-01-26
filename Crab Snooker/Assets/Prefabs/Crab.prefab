@@ -92,3 +92,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0a48b49fe325d429b855664af850de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveXAxis: 
+  moveYAxis: 
+  lookXAxis: 
+  lookYAxis: 
+  attackAxis: 
+  blockAxis: 
