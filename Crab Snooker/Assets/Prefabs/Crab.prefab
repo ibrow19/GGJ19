@@ -45,7 +45,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.02, y: -0.83}
+  m_Offset: {x: 3.81, y: -0.75}
   m_Size: {x: 1.5, y: 0.2}
   m_Direction: 1
 --- !u!114 &36867891563478392
@@ -105,7 +105,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.95, y: -0.83}
+  m_Offset: {x: 0.7, y: -0.75}
   m_Size: {x: 4.5, y: 0.2}
   m_Direction: 1
 --- !u!1 &4282827909372216567
@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 4866010013988848043}
   - component: {fileID: 6030126050033409039}
   - component: {fileID: 2318029341307177476}
+  - component: {fileID: 690255865217742265}
   m_Layer: 0
   m_Name: CrabBody
   m_TagString: Untagged
@@ -179,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 2022082509
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 878d0a393e4e72643871a01a9b4d198d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f6a7c7a3ebb6ad48af03abb23b63410, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -206,6 +207,18 @@ CircleCollider2D:
   m_Offset: {x: -9, y: 0}
   serializedVersion: 2
   m_Radius: 5
+--- !u!114 &690255865217742265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282827909372216567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64539456af53ca845b7f03ec4a5d70ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6886360563673583665
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +262,7 @@ GameObject:
   - component: {fileID: 2258385566734260038}
   - component: {fileID: 8638137428971696329}
   - component: {fileID: 1924836399402474806}
+  - component: {fileID: 2192453195210029265}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Untagged
@@ -363,3 +377,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &2192453195210029265
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208534457615783310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

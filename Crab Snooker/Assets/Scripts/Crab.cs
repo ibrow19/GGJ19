@@ -44,7 +44,7 @@ public class Crab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>(); 
+        rigidBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
