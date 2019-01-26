@@ -45,6 +45,8 @@ public class Crab : MonoBehaviour
 
     void FixedUpdate()
     {
+        print(Input.GetAxisRaw("X"));
+        print(Input.GetAxisRaw("Circle"));
         handleRotate();
         handleMove();
     }
