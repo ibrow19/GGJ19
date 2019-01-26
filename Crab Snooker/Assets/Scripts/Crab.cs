@@ -23,6 +23,15 @@ public class Crab : MonoBehaviour
     public string attackAxis;
     public string blockAxis;
 
+    //Rotations
+    //float rotVal = 0;
+    float smooth = 5.0f;
+    float tiltAngle = 60.0f;
+    float rotSpeed = 0.1f;
+    //Inputs
+    private float xValR;
+    private float yValR;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +41,8 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        handleMove(); 
+        handleMove();
+        handleRotate();
     }
 
     private void handleMove()
@@ -50,12 +60,33 @@ public class Crab : MonoBehaviour
         return move;
     }
 
-    private Vector2 getLookDir(string xAxis, string yAxis)
+    private Vector2 getLookDir()
     {
-        float x = Input.GetAxis(xAxis);
-        float y = Input.GetAxis(yAxis);
+        float x = Input.GetAxis(lookXAxis);
+        float y = Input.GetAxis(lookYAxis);
         Vector2 lookDir = new Vector2(x, y);
         lookDir.Normalize();
         return lookDir;
+    }
+
+    private void handleRotate()
+    {
+        // get right stick components
+        xValR = Input.GetAxis(lookXAxis);
+        yValR = Input.GetAxis(lookYAxis);
+        
+        // Get angle of stick rotation
+        float tiltAroundZ = Mathf.Rad2Deg * Mathf.Atan2(yValR, xValR);
+
+        // Set up quaternion for slerping
+        Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
+
+        // Don't rotate if joystick is in idle position
+        if (xValR == 0 && yValR == 0)
+            target = transform.rotation;
+
+        // Slerp objects towrds stick direction, smooth determines speed of rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, target, Time.deltaTime * smooth);
     }
 }
