@@ -48,7 +48,7 @@ public class StateControl : MonoBehaviour
     // wait times
     private const float setupTime = 1f;
     private const float startTime = 0.3f;
-    private const float playTime = 100f;
+    private const float playTime = 10f;
     private const float winTime = 2f;
     private const float restartTime = 30f;
 
