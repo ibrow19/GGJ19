@@ -47,7 +47,7 @@ public class StateControl : MonoBehaviour
     // wait times
     private const float setupTime = 1f;
     private const float startTime = 0.3f;
-    private const float playTime = 1f;
+    private const float playTime = 100f;
     private const float winTime = 2f;
     private const float restartTime = 30f;
 
@@ -69,9 +69,9 @@ public class StateControl : MonoBehaviour
 
         switch (currentState)
         {
-            //case State.SETUP:
-            //    handleSetup();
-           //     break;
+            case State.SETUP:
+                handleSetup();
+                break;
 
             case State.START:
                 handleStart();
@@ -118,7 +118,7 @@ public class StateControl : MonoBehaviour
         {
             stateSelect(State.PLAY);
             srenderer.enabled = false;
-            //crab1.activate();
+            crab1.activate();
         }
 
     }

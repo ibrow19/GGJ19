@@ -26,7 +26,6 @@ public class SelectOnInput : MonoBehaviour
             eventSystem.SetSelectedGameObject(selectedObject);
             buttonSelected = true;
         }
-        print(Input.GetAxisRaw("VerticalL"));
     }
 
     // When game object deactivated button no longer selected
