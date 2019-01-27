@@ -49,7 +49,7 @@ public class StateControl : MonoBehaviour
     // wait times
     private const float setupTime = 1.5f;
     private const float startTime = 0.5f;
-    private const float winTime = 2f;
+    private const float winTime = 5f;
     private const float restartTime = 30f;
 
     // start scene index
@@ -157,6 +157,7 @@ public class StateControl : MonoBehaviour
         if (waitCount >= winTime)
         {
             stateSelect(State.RESTART);
+            srenderer.enabled = false;
             menu.activate();
         }
     }

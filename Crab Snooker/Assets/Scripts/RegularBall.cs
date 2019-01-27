@@ -7,7 +7,7 @@ public class RegularBall : MonoBehaviour
     private const float powerSpeed = 5f;
 
     private float depowerTime = 0f;
-    private const float depowerLimit = 0.2f;
+    private const float depowerLimit = 0.05f;
     private bool powered = false;
 
     private ParticleSystem particles;
