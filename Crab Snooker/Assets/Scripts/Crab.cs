@@ -51,11 +51,16 @@ public class Crab : MonoBehaviour
     public Animator bodyAnimator;
 
     private Rigidbody2D rigidBody;
+    private AudioSource audioSource;
+
+    public AudioClip shellInSound;
+    public AudioClip shellOutSound;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         legRenderer = GetComponent<SpriteRenderer>();
         legRenderer.enabled = false;
     }
@@ -206,5 +211,14 @@ public class Crab : MonoBehaviour
         cueForce.setActive(newState == State.SHOOTING, transform.localScale);
         legRenderer.enabled = (newState == State.SHOOTING || newState == State.NEUTRAL);
         crabBody.setBlocking((newState == State.BLOCK || newState == State.SLEEP));
+
+        if (newState == State.TRANSITIN)
+        {
+            audioSource.PlayOneShot(shellInSound, 1);
+        }
+        else if (newState == State.TRANSITOUT)
+        {
+            audioSource.PlayOneShot(shellOutSound, 1);
+        }
     }
 }

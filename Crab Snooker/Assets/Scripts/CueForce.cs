@@ -6,11 +6,16 @@ public class CueForce : MonoBehaviour
 {
     public float force = 1000f;
     private Vector3 refScale;
+    private AudioSource audioSource;
+
+    public AudioClip cueBallSound;
+    public AudioClip cueOtherSound;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Collider2D>().enabled = false; 
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,11 @@ public class CueForce : MonoBehaviour
         {
             RegularBall ball = collider.gameObject.GetComponent<RegularBall>();
             ball.powerUp();
+            audioSource.PlayOneShot(cueBallSound, 1);
+        }
+        else
+        {
+            audioSource.PlayOneShot(cueOtherSound, 1);
         }
     }
 }
