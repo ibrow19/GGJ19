@@ -98,7 +98,7 @@ public class StateControl : MonoBehaviour
     {
         if(!startPlayed)
         {
-            audioSource.PlayOneShot(setupSound, 1);
+            //audioSource.PlayOneShot(setupSound, 1);
             startPlayed = true;
         }
 
@@ -129,7 +129,7 @@ public class StateControl : MonoBehaviour
         if (!blueCrab.isAlive() && !redCrab.isAlive())
         {
             stateSelect(State.WIN);
-            audioSource.PlayOneShot(victorySound, 1);
+            //audioSource.PlayOneShot(victorySound, 1);
             srenderer.enabled = true;
             srenderer.sprite = drawSprite;
         }
@@ -137,7 +137,7 @@ public class StateControl : MonoBehaviour
         if (!blueCrab.isAlive() && redCrab.isAlive())
         {
             stateSelect(State.WIN);
-            audioSource.PlayOneShot(victorySound, 1);
+            //audioSource.PlayOneShot(victorySound, 1);
             srenderer.enabled = true;
             srenderer.sprite = redVictorySprite;
         }
@@ -145,7 +145,7 @@ public class StateControl : MonoBehaviour
         if (blueCrab.isAlive() && !redCrab.isAlive())
         {
             stateSelect(State.WIN);
-            audioSource.PlayOneShot(victorySound, 1);
+            //audioSource.PlayOneShot(victorySound, 1);
             srenderer.enabled = true;
             srenderer.sprite = blueVictorySprite;
         }
@@ -173,6 +173,5 @@ public class StateControl : MonoBehaviour
     {
         currentState = nextState;
         waitCount = 0;
-
     }
 }
