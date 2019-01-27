@@ -50,8 +50,6 @@ public class RegularBall : MonoBehaviour
 
             if (depowerTime >= depowerLimit)
             {
-                Debug.Log(rigidBody.velocity.magnitude);
-                Debug.Log("Depowering");
                 powered = false;
                 depowerTime = 0f;
                 particles.enableEmission = false;

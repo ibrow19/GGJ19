@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 150002361
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -189,13 +189,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7360bcad140a447a21e4489fb04482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crab1: {fileID: 0}
-  crab2: {fileID: 0}
+  redCrab: {fileID: 0}
+  blueCrab: {fileID: 0}
   menu: {fileID: 0}
   setupSound: {fileID: 8300000, guid: bcf2c0391c9419342b1e1fa5e7d559f0, type: 3}
   startSound: {fileID: 0}
   victorySound: {fileID: 8300000, guid: 2ed6ba60dfdeb7f4fa6c6210e8d36efb, type: 3}
   backgroundMusic: {fileID: 0}
   startSprite: {fileID: 0}
-  p1VictorySprite: {fileID: 0}
-  p2VictorySprite: {fileID: 0}
+  drawSprite: {fileID: 0}
+  redVictorySprite: {fileID: 0}
+  blueVictorySprite: {fileID: 0}

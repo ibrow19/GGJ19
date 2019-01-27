@@ -12,6 +12,7 @@ public class Crab : MonoBehaviour
         TRANSITOUT,
         NEUTRAL,
         SHOOTING,
+        DEAD,
     }
 
     // Current state of crab.
@@ -26,6 +27,10 @@ public class Crab : MonoBehaviour
 
     // Timer for current state.
     private float stateTime = 0f;
+
+    // Blocking limit.
+    private const float blockCD = 1f;
+    private float timeSinceBlock = 1f;
 
     // Animation times.
     private const float transitTime = 0.1f;
@@ -56,6 +61,8 @@ public class Crab : MonoBehaviour
     public AudioClip shellInSound;
     public AudioClip shellOutSound;
 
+    public GameObject debris;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,12 +75,26 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == State.SLEEP)
+        if (state == State.SLEEP || state == State.DEAD)
         {
             return;
         }
 
-        if ((state == State.TRANSITOUT || state == State.TRANSITIN) &&
+        // Update state timer.
+        stateTime += Time.deltaTime;
+        if (state != State.BLOCK)
+        {
+            timeSinceBlock += Time.deltaTime;
+        }
+
+        if (!isAlive())
+        {
+            setState(State.DEAD);
+            bodyAnimator.SetTrigger("die");
+            GameObject newDebris = Instantiate(debris);
+            newDebris.transform.position = transform.position;
+        }
+        else if ((state == State.TRANSITOUT || state == State.TRANSITIN) &&
              stateTime > transitTime)
         {
             if (state == State.TRANSITIN)
@@ -102,7 +123,7 @@ public class Crab : MonoBehaviour
             setState(State.SHOOTING);
             bodyAnimator.SetTrigger("startPoke");
         }
-        else if (state == State.NEUTRAL && Input.GetAxisRaw(blockAxis) > 0)
+        else if (state == State.NEUTRAL && Input.GetAxisRaw(blockAxis) > 0 && timeSinceBlock >= blockCD)
         {
             setState(State.TRANSITIN);
             bodyAnimator.SetTrigger("shellIn");
@@ -115,9 +136,6 @@ public class Crab : MonoBehaviour
         {
             return;
         }
-
-        // Update state timer.
-        stateTime += Time.deltaTime;
 
         if (state == State.NEUTRAL)
         {
@@ -206,6 +224,11 @@ public class Crab : MonoBehaviour
 
     private void setState(State newState)
     {
+        if (state == State.BLOCK)
+        {
+            timeSinceBlock = 0f;
+        }
+
         stateTime = 0f;
         state = newState;
         cueForce.setActive(newState == State.SHOOTING, transform.localScale);
