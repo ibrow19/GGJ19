@@ -6,6 +6,7 @@ public class CrabBody : MonoBehaviour
 {
     private Animator animator;
     private bool alive = true;
+    private bool blocking = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +26,18 @@ public class CrabBody : MonoBehaviour
         {
             // TODO: play audio here.
 
-
             RegularBall otherBall = collision.gameObject.GetComponent<RegularBall>();
 
-            if (otherBall.isPowered())
+            if (!blocking && otherBall.isPowered())
             {
                 alive = false;
             }
         }
+    }
+
+    public void setBlocking(bool isBlocking)
+    {
+        blocking = isBlocking;
     }
 
     public bool isAlive()
