@@ -514,6 +514,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5883751678521564166, guid: 5e2c2e8207ddd2046b744813173bfdd1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2c2e8207ddd2046b744813173bfdd1, type: 3}
 --- !u!114 &747640454 stripped
@@ -1789,6 +1794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883751678521564166, guid: 5e2c2e8207ddd2046b744813173bfdd1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e2c2e8207ddd2046b744813173bfdd1, type: 3}
