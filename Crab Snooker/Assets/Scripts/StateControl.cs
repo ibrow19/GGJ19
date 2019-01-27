@@ -65,7 +65,6 @@ public class StateControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("state:" + currentState);
         waitCount += Time.deltaTime;
 
         switch (currentState)
