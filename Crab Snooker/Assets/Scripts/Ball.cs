@@ -33,10 +33,15 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        float minAngle = -5f;
+        float maxAngle = 5f;
+        float angle = Random.Range(minAngle, maxAngle);
+        Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        Vector3 dir = rotation * transform.right;
         
         rb2d = this.gameObject.GetComponent<Rigidbody2D>();
         rb2d.AddTorque(Random.Range(-100.0f, 100.0f));
-        rb2d.AddForce(transform.right * Random.Range(500.0f,1000.0f));
+        rb2d.AddForce(dir * Random.Range(800.0f,1000.0f));
 
         // Power up ball.
         GetComponent<RegularBall>().powerUp();

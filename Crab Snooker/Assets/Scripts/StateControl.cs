@@ -47,7 +47,7 @@ public class StateControl : MonoBehaviour
     private float waitCount = 0;
 
     // wait times
-    private const float setupTime = 1.5f;
+    private const float setupTime = 3f;
     private const float startTime = 0.5f;
     private const float winTime = 5f;
     private const float restartTime = 30f;
