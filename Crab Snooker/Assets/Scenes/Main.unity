@@ -414,6 +414,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1676780164417419436, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
       propertyPath: m_Sprite
@@ -952,6 +962,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1676780164417419436, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
       propertyPath: m_Sprite
@@ -1027,6 +1047,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1676780164417419436, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
       propertyPath: m_Sprite
@@ -1101,6 +1131,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1676780164417419436, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
@@ -1196,6 +1236,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1676780164417419436, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
       propertyPath: m_Sprite
@@ -1274,12 +1324,12 @@ PrefabInstance:
     - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -3.59
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5346204468422166959, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1676780164417419436, guid: 26883130dc44c0e44933bf3b94343dfb,
         type: 3}
@@ -1478,7 +1528,7 @@ PrefabInstance:
     - target: {fileID: 727477810365422462, guid: 21f4c233864e63340b9539d18c93d826,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 504816291
+      value: -1260942589
       objectReference: {fileID: 0}
     - target: {fileID: 727477810365422462, guid: 21f4c233864e63340b9539d18c93d826,
         type: 3}
