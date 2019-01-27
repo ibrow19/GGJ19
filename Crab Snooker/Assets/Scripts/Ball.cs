@@ -5,31 +5,9 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    /*
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.name.StartsWith("Crab"))
-        {
-            if (col.gameObject.tag.Equals("Protected"))
-            {
-                //this.gameObject.//rebound like crab was ball
-            }
-            else
-            {
-                if (col.gameObject.tag.Equals("Shooting"))
-                {
-                    //some kind of rebound
-                }
-                else
-                {
-                    rb2d.AddForce(transform.right * 10.0f);
 
-                    //other crab wins or hit crab loses
-                }
-            }
-        }
-    }
-    */
+    private bool first = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,12 +21,16 @@ public class Ball : MonoBehaviour
         rb2d.AddTorque(Random.Range(-100.0f, 100.0f));
         rb2d.AddForce(dir * Random.Range(800.0f,1000.0f));
 
-        // Power up ball.
-        GetComponent<RegularBall>().powerUp();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (first)
+        {
+            // Power up ball on first update.
+            GetComponent<RegularBall>().powerUp();
+            first = false;
+        }
     }
 }
