@@ -12,6 +12,7 @@ public class Crab : MonoBehaviour
         TRANSITOUT,
         NEUTRAL,
         SHOOTING,
+        DEAD,
     }
 
     // Current state of crab.
@@ -56,6 +57,8 @@ public class Crab : MonoBehaviour
     public AudioClip shellInSound;
     public AudioClip shellOutSound;
 
+    public GameObject debris;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,12 +71,19 @@ public class Crab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (state == State.SLEEP)
+        if (state == State.SLEEP || state == State.DEAD)
         {
             return;
         }
 
-        if ((state == State.TRANSITOUT || state == State.TRANSITIN) &&
+        if (!isAlive())
+        {
+            setState(State.DEAD);
+            bodyAnimator.SetTrigger("die");
+            GameObject newDebris = Instantiate(debris);
+            newDebris.transform.position = transform.position;
+        }
+        else if ((state == State.TRANSITOUT || state == State.TRANSITIN) &&
              stateTime > transitTime)
         {
             if (state == State.TRANSITIN)

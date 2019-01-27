@@ -577,6 +577,7 @@ MonoBehaviour:
   bodyAnimator: {fileID: 2915720983706978792}
   shellInSound: {fileID: 8300000, guid: 453500db645af194386d207e9f2e8a9d, type: 3}
   shellOutSound: {fileID: 8300000, guid: c50d9f494b9a38547aeefd8d901dad4d, type: 3}
+  debris: {fileID: 3660738922474544404, guid: 839b35279292ae440a0eb574bd3dec24, type: 3}
 --- !u!50 &1924836399402474806
 Rigidbody2D:
   serializedVersion: 4
