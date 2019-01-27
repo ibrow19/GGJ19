@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Force
+  - Ball
+  - Table
   layers:
   - Default
   - TransparentFX

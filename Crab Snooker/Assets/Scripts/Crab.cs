@@ -123,7 +123,7 @@ public class Crab : MonoBehaviour
 
     public void activate()
     {
-        state = State.TRANSITOUT;         
+        setState(State.TRANSITOUT);
         bodyAnimator.SetTrigger("shellOut");
     }
 
@@ -205,5 +205,6 @@ public class Crab : MonoBehaviour
         state = newState;
         cueForce.setActive(newState == State.SHOOTING, transform.localScale);
         legRenderer.enabled = (newState == State.SHOOTING || newState == State.NEUTRAL);
+        crabBody.setBlocking((newState == State.BLOCK || newState == State.SLEEP));
     }
 }
