@@ -8,10 +8,16 @@ public class CrabBody : MonoBehaviour
     private bool alive = true;
     private bool blocking = true;
 
+    public AudioClip crabHitSound;
+    public AudioClip blockHitSound;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,7 +30,15 @@ public class CrabBody : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ball")
         {
-            // TODO: play audio here.
+            // Play sounds.
+            if (blocking)
+            {
+                audioSource.PlayOneShot(blockHitSound, 1);
+            }
+            else
+            {
+                audioSource.PlayOneShot(crabHitSound, 1);
+            }
 
             RegularBall otherBall = collision.gameObject.GetComponent<RegularBall>();
 
@@ -38,6 +52,11 @@ public class CrabBody : MonoBehaviour
     public void setBlocking(bool isBlocking)
     {
         blocking = isBlocking;
+    }
+
+    public bool isBlocking()
+    {
+        return blocking;
     }
 
     public bool isAlive()

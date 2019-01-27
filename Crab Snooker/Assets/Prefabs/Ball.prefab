@@ -4822,6 +4822,8 @@ MonoBehaviour:
   fastBallHitSound: {fileID: 8300000, guid: 373b4d6d9edd2b4479fe360bc9bafd7d, type: 3}
   slowBallHitSound: {fileID: 8300000, guid: d8784d20502a47a41bb8e3db59f2fab6, type: 3}
   tableHitSound: {fileID: 8300000, guid: d8784d20502a47a41bb8e3db59f2fab6, type: 3}
+  crabHitSound: {fileID: 8300000, guid: 2a7ea0519ba5d6d46968666b77e4229c, type: 3}
+  blockHitSound: {fileID: 8300000, guid: bc9d4ec7494577a468f5d875d945d87a, type: 3}
 --- !u!82 &1360500692387993693
 AudioSource:
   m_ObjectHideFlags: 0
