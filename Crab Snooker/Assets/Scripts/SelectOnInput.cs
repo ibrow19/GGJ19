@@ -26,14 +26,6 @@ public class SelectOnInput : MonoBehaviour
             eventSystem.SetSelectedGameObject(selectedObject);
             buttonSelected = true;
         }
-
-       // if(buttonSelected)
-       //     selectedObject.transform.localScale = new Vector3(2F, 2F, 2F);
-       // else
-       //     selectedObject.transform.localScale = new Vector3(1F, 1F, 1F);
-
-
-
     }
 
     // When game object deactivated button no longer selected
