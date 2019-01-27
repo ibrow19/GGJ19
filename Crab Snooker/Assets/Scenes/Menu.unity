@@ -421,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 3316071139491861229, guid: 624bf1ff3ee3f2f41b707cde899995de,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 27.09
+      value: 27.090027
       objectReference: {fileID: 0}
     - target: {fileID: 3316071139491861229, guid: 624bf1ff3ee3f2f41b707cde899995de,
         type: 3}
@@ -512,8 +512,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0cf2724c7803d414baf7f1d09fd19c54,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3316071139599237393, guid: 624bf1ff3ee3f2f41b707cde899995de,
         type: 3}
       propertyPath: m_Type
@@ -542,7 +541,27 @@ PrefabInstance:
     - target: {fileID: 3316071138909969320, guid: 624bf1ff3ee3f2f41b707cde899995de,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316071138909969320, guid: 624bf1ff3ee3f2f41b707cde899995de,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316071138909969320, guid: 624bf1ff3ee3f2f41b707cde899995de,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316071138909969320, guid: 624bf1ff3ee3f2f41b707cde899995de,
+        type: 3}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3316071138909969320, guid: 624bf1ff3ee3f2f41b707cde899995de,
+        type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3316071140267784867, guid: 624bf1ff3ee3f2f41b707cde899995de,
         type: 3}
