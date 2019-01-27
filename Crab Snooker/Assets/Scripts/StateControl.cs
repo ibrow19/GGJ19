@@ -47,9 +47,8 @@ public class StateControl : MonoBehaviour
     private float waitCount = 0;
 
     // wait times
-    private const float setupTime = 1f;
-    private const float startTime = 0.3f;
-    private const float playTime = 120f;
+    private const float setupTime = 1.5f;
+    private const float startTime = 0.5f;
     private const float winTime = 2f;
     private const float restartTime = 30f;
 
@@ -141,7 +140,7 @@ public class StateControl : MonoBehaviour
             stateSelect(State.WIN);
             audioSource.PlayOneShot(victorySound, 1);
             srenderer.enabled = true;
-            srenderer.sprite = blueVictorySprite;
+            srenderer.sprite = redVictorySprite;
         }
 
         if (blueCrab.isAlive() && !redCrab.isAlive())
